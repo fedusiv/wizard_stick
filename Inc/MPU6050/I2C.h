@@ -16,19 +16,19 @@
 
 #define fabs        fabsf
 #define min(a,b) ((a<b)?a:b)
-
+/*
 static inline int reg_int_cb(struct int_param_s *int_param)
 {
   UNUSED(int_param);
     return 0;
-}
+}*/
 
 #define get_ms(timestamp) (*timestamp=HAL_GetTick())
 
 #define __no_operation() (0)
 
 #endif
-#define hi2cMPU6050 I2C_HandleTypeDef
+
 
 #ifdef TRACE
 #ifdef DIAG_TRACE_H_
@@ -43,6 +43,8 @@ static inline int reg_int_cb(struct int_param_s *int_param)
 #define log_e(...)     do {} while (0)
 #endif
 
+
+void i2c_init(void);
 HAL_StatusTypeDef i2c_write(uint8_t slave_addr, uint8_t reg_addr,
     uint8_t length, uint8_t const *data);
 HAL_StatusTypeDef i2c_read(uint8_t slave_addr, uint8_t reg_addr, uint8_t length,

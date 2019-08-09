@@ -26,6 +26,7 @@ ADD_EXECUTABLE(${CMAKE_PROJECT_NAME}.elf
  "Inc/stm32f1xx_hal_conf.h"
  "Inc/stm32f1xx_it.h"
  "Inc/gesture.h"
+ "Inc/stick_conf.h"
 
  "Src/MPU6050/I2C.c"
  "Src/MPU6050/inv_mpu.c"
@@ -51,6 +52,8 @@ add_library ("stm" STATIC
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.c"
+# "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c"
+
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
@@ -61,7 +64,7 @@ add_library ("stm" STATIC
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_rcc.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_system.h"
-
+# "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.h"
 
  "${STARTUP_CODE}"
 )
