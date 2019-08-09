@@ -1,6 +1,7 @@
 #include "MPU6050/I2C.h"
 #include "stick_conf.h"
 
+
 static I2C_HandleTypeDef i2cHandle;
 static void Error_Handler(void);
 

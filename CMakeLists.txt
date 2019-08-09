@@ -52,7 +52,7 @@ add_library ("stm" STATIC
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_gpio.c"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_rcc.c"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_utils.c"
-# "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c"
+ "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c"
 
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h"
@@ -64,7 +64,7 @@ add_library ("stm" STATIC
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_rcc.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_system.h"
-# "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.h"
+ "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h"
 
  "${STARTUP_CODE}"
 )

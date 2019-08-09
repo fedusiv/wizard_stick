@@ -1,11 +1,13 @@
 #include "main.h"
+#include "gesture.h"
+
 void SystemClock_Config(void);
 
 int main(void)
 {
   HAL_Init();
   SystemClock_Config();
-
+   init_gesture();
 
   while (1)
   {

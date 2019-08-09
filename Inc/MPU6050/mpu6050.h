@@ -1,6 +1,6 @@
 #ifndef __MPU6050_H
 #define __MPU6050_H
-
+#include "stm32f1xx_hal.h"
 #define devAddr  0x68 //devAddr
 
 #define MPU6050_ADDRESS_AD0_LOW     0x68 // address pin low (GND), default for InvenSense evaluation board
