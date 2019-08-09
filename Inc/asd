@@ -1,0 +1,11 @@
+	 "${PROJ_DIR}/mpu_driver/Source/I2C.c"
+	 "${PROJ_DIR}/mpu_driver/Source/inv_mpu.c"
+	 "${PROJ_DIR}/mpu_driver/Source/inv_mpu_dmp_motion_driver.c"
+	 "${PROJ_DIR}/mpu_driver/Source/mpu6050.c"
+
+	 "${PROJ_DIR}/mpu_driver/Include/I2C.h"
+	 "${PROJ_DIR}/mpu_driver/Include/inv_mpu.h"
+	 "${PROJ_DIR}/mpu_driver/Include/inv_mpu_dmp_motion_driver.h"
+	 "${PROJ_DIR}/mpu_driver/Include/mpu6050.h"
+	 "${PROJ_DIR}/mpu_driver/Include/dmpKey.h"
+	 "${PROJ_DIR}/mpu_driver/Include/dmpmap.h"

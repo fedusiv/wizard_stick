@@ -17,12 +17,27 @@ ADD_DEFINITIONS (-DHSE_VALUE=8000000)
 # its "project configuration" it simply makes header files appear in the source tree pane.
 ADD_EXECUTABLE(${CMAKE_PROJECT_NAME}.elf
  "Src/main.c"
- "Inc/main.h"
- "Inc/stm32f1xx_hal_conf.h"
+ "Src/system_stm32f1xx.c"
  "Src/stm32f1xx_hal_msp.c"
  "Src/stm32f1xx_it.c"
+ "Src/gesture.c"
+
+ "Inc/main.h"
+ "Inc/stm32f1xx_hal_conf.h"
  "Inc/stm32f1xx_it.h"
- "Src/system_stm32f1xx.c"
+ "Inc/gesture.h"
+
+ "Src/MPU6050/I2C.c"
+ "Src/MPU6050/inv_mpu.c"
+ "Src/MPU6050/inv_mpu_dmp_motion_driver.c"
+ "Src/MPU6050/mpu6050.c"
+
+ "Inc/MPU6050/I2C.h"
+ "Inc/MPU6050/inv_mpu.h"
+ "Inc/MPU6050/inv_mpu_dmp_motion_driver.h"
+ "Inc/MPU6050/mpu6050.h"
+ "Inc/MPU6050/dmpKey.h"
+ "Inc/MPU6050/dmpmap.h"
 )
  
 # Workaround : splitting C and C++ code helps QtCreator parse header files correctly. Without it, QtCreator
@@ -46,6 +61,8 @@ add_library ("stm" STATIC
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_rcc.h"
  "${CUBE_ROOT}/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_system.h"
+
+
  "${STARTUP_CODE}"
 )
  
