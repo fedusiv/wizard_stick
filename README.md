@@ -25,5 +25,4 @@ to start gdb server :
 openocd -f /usr/share/openocd/scripts/interface/stlink-v2.cfg -f /usr/share/openocd/scripts/target/stm32f1x.cfg
 
 
-mpu6050 driver from here
-https://github.com/guoli-lyu/STM32_DMP_Driver
+

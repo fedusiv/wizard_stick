@@ -3,7 +3,8 @@
 
 #include "stm32f1xx_hal.h"
 
-#define I2C_ADDRESS        0x30F
+#define I2C_ADDRESS        0x10
+#define I2C_ADDRESS2       0x11
 #define I2C_SPEEDCLOCK   400000
 #define I2C_DUTYCYCLE    I2C_DUTYCYCLE_2
 #define I2Cx             I2C1
