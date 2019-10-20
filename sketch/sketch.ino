@@ -296,7 +296,7 @@ void readWorldAccel()
 }
 
 float sampling(float average, float cur, int samples){
-  average += cur / samples;
+  average +=  (cur - average) / samples;
   return average;
 }
 
