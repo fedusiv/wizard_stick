@@ -280,12 +280,12 @@ void loop() {
 
              magic(quatAverX, quatAverY,quatAverZ);
             /*Serial.print("ypr\t");
-            Serial.println(quatAverX);
+            Serial.print(quatAverX);
             Serial.print("\t");
             Serial.print(quatAverY);
             Serial.print("\t");
-            Serial.println(quatAverZ);
-            */
+            Serial.println(quatAverZ);*/
+            
         #endif
 
         #ifdef OUTPUT_READABLE_REALACCEL
@@ -345,47 +345,98 @@ float sampling(float average, float cur, int samples){
   return average;
 }
 
-
-float oscil = 1;  
-int stable_count = 15, cur_stable = 0;
-bool movement = false;
-float xprev;
+float oscil = 1.0;  
+float movement_step = 10;
+int stable_count = 10, x_stable = 0,z_stable = 0;
+bool x_mov = false, z_mov = false ;
+float xprev, yprev, zprev;
+float xstart, ystart, zstart;
+bool x_gest = false, z_gest = false;
+bool x_gest_end = false, z_gest_end = false;
 float magic_first;
+
 void magic(float x, float y, float z)
 {
   if ( magic_first )
   {
     xprev = x;
+    zprev = z;
     magic_first = false;
   }
   else
   {
     if( (x - xprev) > oscil || (xprev - x ) > oscil)
     {
-       if ( !movement ) movement = true;
-       cur_stable = 0;
-       Serial.println("stable 0");
+       if ( !x_mov ) 
+       {x_mov = true;
+        xstart = x;
+       }
+       x_stable = 0;
     }else
     {
-      if ( movement )
+      if ( x_mov )
       {
-        if ( cur_stable >= stable_count ) 
+        if ( x_stable >= stable_count ) 
         {
-          movement = false;
-          Serial.println("MOVE");
+          x_mov = false;
+          if ( (x - xstart) > movement_step  || ( xstart - x ) > movement_step)
+          {
+            x_gest_end = true;
+          }
+          x_gest = true;
         }
         else
         {
-          cur_stable+=1;
-          Serial.print("stable : ");
-          Serial.println(cur_stable);
+          x_stable+=1;
         }
       }
     }
 
-
+    if( (z - zprev) > oscil || (zprev - z ) > oscil)
+    {
+       if ( !z_mov ) 
+       {z_mov = true;
+        zstart = z;
+       }
+       z_stable = 0;
+    }else
+    {
+      if ( z_mov )
+      {
+        if ( z_stable >= stable_count ) 
+        {
+          z_mov = false;
+          if ( (z - zstart) > movement_step  || ( zstart - z ) > movement_step)
+          {
+            z_gest_end = true;
+          }
+           z_gest = true;
+        }
+        else
+        {
+          z_stable+=1;
+        }
+      }
+    }
 
     
+
+     if( !z_mov && !x_mov )
+     {
+      
+        if ( z_gest_end && x_gest_end )
+        {Serial.println("Diag");
+        }else if ( z_gest_end  ) {
+          Serial.println("UpDown");
+        }else if ( x_gest_end ){
+          Serial.println("LeftRight");
+        }
+        x_gest_end = false;
+        z_gest_end = false;
+     }
+    
+    
     xprev = x;
+    zprev = z;
   }
 }
