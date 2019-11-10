@@ -12,7 +12,6 @@ INCLUDE_DIRECTORIES("Inc/")
 # in the CMakeLists.txt rather than the toolchain file, because it's project dependent, not
 # "platform" dependent, where by platform I mean STM32F4.
 ADD_DEFINITIONS (-DHSE_VALUE=8000000)
- 
 # All the sources goes here. Adding headers isn't obligatory, but since QtCreator treats CMakeLists.txt as
 # its "project configuration" it simply makes header files appear in the source tree pane.
 ADD_EXECUTABLE(${CMAKE_PROJECT_NAME}.elf

@@ -6,8 +6,8 @@ SET (DEVICE "STM32F103xB")
 # This is a variable which is later used here and in the CMakeLists.txt. It simply tells
 # where to find the SDK (CubeF4). Please change it accordingly if you have other 
 # version of CubeF4 installed.
-SET (CUBE_ROOT "$ENV{HOME}/STM32Cube/Repository/STM32Cube_FW_F1_V1.8.0")
-SET (PROJ_DIR  "$ENV{HOME}/projects/stm/wizard_stick")
+SET (CUBE_ROOT "$ENV{HOME}/self/STM32Cube_FW_F1_V1.8.0")
+SET (PROJ_DIR  "$ENV{HOME}/self/wizard_stick")
 # Startup code and linker script - more on it later.
 SET (STARTUP_CODE "${PROJ_DIR}/startup/startup_stm32f103xb.s")
 SET (LINKER_SCRIPT "${PROJ_DIR}/STM32F103C8_FLASH.ld")
@@ -16,7 +16,6 @@ SET (LINKER_SCRIPT "${PROJ_DIR}/STM32F103C8_FLASH.ld")
 # fails of course.
 SET (CMAKE_SYSTEM_NAME Generic)
 SET (CMAKE_SYSTEM_PROCESSOR arm)
- 
 # -mcpu tells which CPU to target obviously. -fdata-sections -ffunction-sections Tells GCC to.
 # get rid of unused code in the output binary. -Wall produces verbose warnings.
 SET(CMAKE_C_FLAGS "-mcpu=cortex-m3 -std=gnu99 -fdata-sections -ffunction-sections -Wall" CACHE INTERNAL "c compiler flags")
