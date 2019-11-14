@@ -22,6 +22,18 @@ ADD_EXECUTABLE(${CMAKE_PROJECT_NAME}.elf
  "Src/stm32f1xx_it.c"
  "Inc/stm32f1xx_it.h"
  "Src/system_stm32f1xx.c"
+ "Src/MPU6050/mpu6050.c"
+ "Src/MPU6050/I2C.c"
+ "Src/MPU6050/inv_mpu.c"
+ "Src/MPU6050/inv_mpu_dmp_motion_driver.c"
+ "Inc/MPU6050/mpu6050.h"
+ "Inc/MPU6050/I2C.h"
+ "Inc/MPU6050/inv_mpu.h"
+ "Inc/MPU6050/inv_mpu_dmp_motion_driver.h"
+ "Inc/MPU6050/dmpKey.h"
+ "Inc/MPU6050/dmpmap.h"
+
+
 )
  
 # Workaround : splitting C and C++ code helps QtCreator parse header files correctly. Without it, QtCreator
